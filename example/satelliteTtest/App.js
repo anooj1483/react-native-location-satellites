@@ -24,7 +24,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+const App: () => React$Node = async() => {
+  let satellites = -1
+  // RNLocationSatellites.getSatellites((sat)=>{
+  //   alert(""+sat)
+  //   satellites = sat
+  // })
+  let sat = await RNLocationSatellites.getSatellites();
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -40,7 +46,7 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>{""+RNLocationSatellites.getSatellites()}</Text>
+              <Text style={styles.sectionTitle}>{""+satellites}</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
