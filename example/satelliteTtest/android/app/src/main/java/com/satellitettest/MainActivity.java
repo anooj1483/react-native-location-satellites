@@ -1,7 +1,7 @@
 package com.satellitettest;
 
 import com.facebook.react.ReactActivity;
-import com.synclovis.RNLocationSatellitesPackage;
+
 
 public class MainActivity extends ReactActivity {
 
@@ -14,5 +14,5 @@ public class MainActivity extends ReactActivity {
     return "satelliteTtest";
   }
 
-  
+
 }

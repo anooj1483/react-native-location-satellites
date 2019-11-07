@@ -40,7 +40,7 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>{""+RNLocationSatellites.getSatellites(1.0,2.0)}</Text>
+              <Text style={styles.sectionTitle}>{""+RNLocationSatellites.getSatellites()}</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.

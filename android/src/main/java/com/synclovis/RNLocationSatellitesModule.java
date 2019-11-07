@@ -1,6 +1,7 @@
 
 package com.synclovis;
 
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -20,7 +21,8 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public int getSatellites(Double latitude, Double longitude){
-      return 8;
+  public void getSatellites(Callback satellitecallback){
+
+      satellitecallback.invoke(8);
   }
 }
