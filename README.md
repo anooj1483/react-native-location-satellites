@@ -30,6 +30,15 @@
 
 Make sure that you have accessed right permissions for getting location.
 
+This library will give you the following location details,
+1. latitude & longitude
+2. accuracy
+3. speed
+4. altitude
+5. bearing
+6. satellites
+
+
 ```javascript
 import {RNLocationSatellites,GPSEventEmitter} from 'react-native-location-satellites';
 componentDidMount(){
