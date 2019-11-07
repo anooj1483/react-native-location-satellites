@@ -13,9 +13,10 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar,
+  StatusBar,NativeEventEmitter
 } from 'react-native';
-import {RNLocationSatellites,GPSEventEmitter} from 'react-native-location-satellites';
+import {RNLocationSatellites} from 'react-native-location-satellites';
+const GPSEventEmitter = new NativeEventEmitter(RNLocationSatellites);
 import {
   Header,
   LearnMoreLinks,

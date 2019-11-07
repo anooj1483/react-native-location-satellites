@@ -40,7 +40,9 @@ This library will give you the following location details,
 
 
 ```javascript
-import {RNLocationSatellites,GPSEventEmitter} from 'react-native-location-satellites';
+import {NativeEventEmitter} from 'react-native';
+import {RNLocationSatellites} from 'react-native-location-satellites';
+const GPSEventEmitter = new NativeEventEmitter(RNLocationSatellites)
 componentDidMount(){
     console.log(RNLocationSatellites)
 	RNLocationSatellites.startLocationUpdate();
