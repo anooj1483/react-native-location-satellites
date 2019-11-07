@@ -61,7 +61,7 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
         params.putDouble("bearing", location.getBearing());
       }
       params.putString("elapsed_time",""+location.getElapsedRealtimeNanos());
-      params.putInt("satellites", location.getExtras().getInt("satellites",-1));
+      params.putInt("satellites", location.getExtras().getInt("satellites",0));
 
       sendEvent(reactContext, eventName, params);
     }catch (Exception e){

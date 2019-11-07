@@ -27,7 +27,7 @@ import {
 class App extends React.Component{
     
   async componentDidMount(){
-    console.log(RNLocationSatellites)
+    console.log(RNLocationSatellites,GPSEventEmitter)
     RNLocationSatellites.startLocationUpdate()
     GPSEventEmitter.addListener('RNSatellite', (event) => {
       alert(JSON.stringify(event))
