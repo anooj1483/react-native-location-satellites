@@ -1,6 +1,9 @@
 
 package com.synclovis;
 
+import android.location.Location;
+import android.location.LocationManager;
+
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
@@ -27,8 +30,12 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule {
   public void getSatellites(float latitude, float longitude, Promise promise){
 
       try{
+        Location location = new Location(LocationManager.GPS_PROVIDER);
+        location.setLatitude(latitude);
+        location.setLongitude(longitude);
+
         WritableMap map = Arguments.createMap();
-        map.putInt("satellites",8);
+        map.putInt("satellites",location.getExtras().getInt("satellites",-1));
         promise.resolve(map);
 
       }catch (Exception e){
