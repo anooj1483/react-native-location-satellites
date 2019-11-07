@@ -27,7 +27,9 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule {
   public void getSatellites(float latitude, float longitude, Promise promise){
 
       try{
-        promise.resolve(8);
+        WritableMap map = Arguments.createMap();
+        map.putInt("satellites",8);
+        promise.resolve(map);
 
       }catch (Exception e){
         e.printStackTrace();

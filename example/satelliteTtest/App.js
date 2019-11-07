@@ -30,7 +30,7 @@ const App: () => React$Node = async() => {
   //   alert(""+sat)
   //   satellites = sat
   // })
-  let sat = await RNLocationSatellites.getSatellites();
+  let sat = await RNLocationSatellites.getSatellites(1,1);
   return (
     <>
       <StatusBar barStyle="dark-content" />
