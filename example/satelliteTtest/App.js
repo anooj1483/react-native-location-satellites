@@ -27,7 +27,7 @@ import {
 class App extends React.Component{
     
   async componentDidMount(){
-    let sat = await RNLocationSatellites.startLocationUpdate()
+    let sat = RNLocationSatellites.startLocationUpdate()
     alert(sat.satellites)
   }
 
