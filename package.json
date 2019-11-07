@@ -1,22 +1,29 @@
-
 {
   "name": "react-native-location-satellites",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a React Native Android library to get the accurate updated location along with satellite count",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native","react-native-location-satellites","react-native-location",
-    "react-location","react-native-accurate-location","npm location","satellite","react-native-satellites",
-    "react-satellite","rn-satellite-count","rn-satellites","rn-location-satellites"
+    "react-native",
+    "react-native-location-satellites",
+    "react-native-location",
+    "react-location",
+    "react-native-accurate-location",
+    "npm location",
+    "satellite",
+    "react-native-satellites",
+    "react-satellite",
+    "rn-satellite-count",
+    "rn-satellites",
+    "rn-location-satellites"
   ],
   "author": "Anooj Krishnan G",
   "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.41.2"    
-
+    "react-native": "^0.41.2"
   },
   "repository": {
     "type": "git",
