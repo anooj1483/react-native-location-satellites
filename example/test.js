@@ -1,0 +1,1 @@
+import RNLocationSatellites from 'react-native-location-satellites';
