@@ -7,7 +7,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 
@@ -141,7 +140,7 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
 
   private void sendEvent(ReactContext reactContext,
                          String eventName,
-                         @Nullable WritableMap params) {
+                         WritableMap params) {
     reactContext
             .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
             .emit(eventName, params);
