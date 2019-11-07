@@ -15,7 +15,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import {RNLocationSatellites,NativeEventEmitter} from 'react-native-location-satellites';
+import {RNLocationSatellites,GPSEventEmitter} from 'react-native-location-satellites';
 import {
   Header,
   LearnMoreLinks,
@@ -27,8 +27,17 @@ import {
 class App extends React.Component{
     
   async componentDidMount(){
-    let sat = RNLocationSatellites.startLocationUpdate()
-    alert(sat.satellites)
+    console.log(RNLocationSatellites)
+    RNLocationSatellites.startLocationUpdate()
+    GPSEventEmitter.addListener('RNSatellite', (event) => {
+      alert(JSON.stringify(event))
+   })
+    
+  }
+
+  componentWillUnmount(){
+
+    GPSEventEmitter.removeListener('RNSatellite')
   }
 
    render(){

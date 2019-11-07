@@ -4,4 +4,4 @@ import { NativeModules,NativeEventEmitter } from 'react-native';
 const { RNLocationSatellites } = NativeModules;
 const loc = {RNLocationSatellites,NativeEventEmitter}
 
-export default loc;
+export {RNLocationSatellites,NativeEventEmitter};
