@@ -15,7 +15,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import RNLocationSatellites from 'react-native-location-satellites';
+import {RNLocationSatellites,NativeEventEmitter} from 'react-native-location-satellites';
 import {
   Header,
   LearnMoreLinks,
@@ -27,7 +27,7 @@ import {
 class App extends React.Component{
     
   async componentDidMount(){
-    let sat = await RNLocationSatellites.getSatellites(1,1);
+    let sat = await RNLocationSatellites.startLocationUpdate()
     alert(sat.satellites)
   }
 
