@@ -1,7 +1,7 @@
 
 # react-native-location-satellites
 
-<img src="https://raw.githubusercontent.com/anooj1483/react-native-location-satellites/tree/master/example/logo.png" data-canonical-src="https://raw.githubusercontent.com/anooj1483/react-native-location-satellites/tree/master/example/logo.png" width="150" height="150" />
+<img src="https://github.com/anooj1483/react-native-location-satellites/blob/master/example/logo.png?raw=true" data-canonical-src="https://github.com/anooj1483/react-native-location-satellites/blob/master/example/logo.png?raw=true" width="130" height="130" />
 
 ## Getting started
 
