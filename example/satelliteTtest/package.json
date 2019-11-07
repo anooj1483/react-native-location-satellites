@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.4",
-    "react-native-location-satellites": "git+https://git@github.com/anooj1483/react-native-location-satellites.git"
+    "react-native-location-satellites": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.7.2",

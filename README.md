@@ -1,6 +1,8 @@
 
 # react-native-location-satellites
 
+<img src="https://raw.githubusercontent.com/anooj1483/react-native-location-satellites/tree/master/example/logo.png" data-canonical-src="https://raw.githubusercontent.com/anooj1483/react-native-location-satellites/tree/master/example/logo.png" width="150" height="150" />
+
 ## Getting started
 
 `$ npm install react-native-location-satellites --save`
@@ -64,4 +66,3 @@ componentWillUnmount(){
 }
 
 ```
-  
