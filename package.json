@@ -1,6 +1,6 @@
 {
   "name": "react-native-location-satellites",
-  "version": "1.0.4-beta-4",
+  "version": "1.0.4",
   "description": "This is a React Native Android library to get the accurate updated location along with satellite count",
   "main": "index.js",
   "scripts": {
