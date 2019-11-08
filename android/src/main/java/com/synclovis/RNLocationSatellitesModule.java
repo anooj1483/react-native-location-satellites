@@ -46,11 +46,12 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
 
       try {
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        WritableMap params = Arguments.createMap();
         if (location != null) {
-          WritableMap params = buildLocationObject(location);
+          params = buildLocationObject(location);
           promise.resolve(params);
         }else{
-          promise.resolve(null);
+          promise.resolve(params);
         }
 
       }catch (Exception e){
