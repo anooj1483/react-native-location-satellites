@@ -34,8 +34,8 @@ class App extends React.Component{
       alert(JSON.stringify(event))
    })
 
-    RNLocationSatellites.getKnownLocation((location)=>{
-      alert("Last"+(location))
+    RNLocationSatellites.getKnownLocation().then((location)=>{
+      console.log("Last Loc",location)
     })
     
   }

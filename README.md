@@ -63,11 +63,9 @@ componentDidMount(){
       alert(JSON.stringify(event))
    	})
 	
-	RNLocationSatellites.getLastKnownLocation('EVENT_NAME');
-
-	GPSEventEmitter.addListener('EVENT_NAME', (event) => {
-      alert(JSON.stringify(event))
-   	})
+	RNLocationSatellites.getLastKnownLocation().then((location)=>{
+      console.log("Last known location: ",location)
+    })
 }
 
 componentWillUnmount(){

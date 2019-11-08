@@ -42,7 +42,7 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
 
   @SuppressLint("MissingPermission")
   @ReactMethod
-  public void getKnownLocation(Promise promise) {
+  public void getLastKnownLocation(Promise promise) {
 
       try {
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
