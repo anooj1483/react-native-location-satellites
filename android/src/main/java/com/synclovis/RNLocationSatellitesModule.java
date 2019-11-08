@@ -42,25 +42,28 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
 
   @SuppressLint("MissingPermission")
   @ReactMethod
-  public void getLastKnownLocation(Promise promise) {
-    try {
+  public void getKnownLocation(Promise promise) {
+
       try {
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        WritableMap params = buildLocationObject(location);
-        promise.resolve(params);
+        if (location != null) {
+          WritableMap params = buildLocationObject(location);
+          promise.resolve(params);
+        }else{
+          promise.resolve(null);
+        }
+
       }catch (Exception e){
         promise.reject("Error", e);
       }
 
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+
   }
 
   private WritableMap buildLocationObject(Location location){
     WritableMap params = Arguments.createMap();
-    params.putString("latitude", "" + location.getLatitude());
-    params.putString("longitude", "" + location.getLongitude());
+    params.putString("latitude", Double.toString(location.getLatitude()));
+    params.putString("longitude", Double.toString(location.getLongitude()));
 
     if(location.hasAccuracy()){
       params.putDouble("accuracy", location.getAccuracy());
@@ -74,7 +77,7 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
     if(location.hasBearing()){
       params.putDouble("bearing", location.getBearing());
     }
-    params.putString("elapsed_time",""+location.getElapsedRealtimeNanos());
+    params.putString("elapsed_time",Double.toString(location.getElapsedRealtimeNanos()));
     params.putInt("satellites", location.getExtras().getInt("satellites",0));
     return params;
   }

@@ -33,6 +33,10 @@ class App extends React.Component{
     GPSEventEmitter.addListener('RNSatellite', (event) => {
       alert(JSON.stringify(event))
    })
+
+    RNLocationSatellites.getKnownLocation((location)=>{
+      alert(JSON.stringify(location))
+    })
     
   }
 
