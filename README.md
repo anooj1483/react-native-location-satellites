@@ -7,7 +7,7 @@
 
 `$ npm install react-native-location-satellites --save`
 
-### Supports only Android. Due to security issues iOS will not disclose satellite counts.
+### NOTE: Supports only Android. Due to security issues iOS will not disclose satellite counts.
 
 ### Mostly automatic installation
 
@@ -56,21 +56,28 @@ import {NativeEventEmitter} from 'react-native';
 import {RNLocationSatellites} from 'react-native-location-satellites';
 const GPSEventEmitter = new NativeEventEmitter(RNLocationSatellites)
 componentDidMount(){
-    console.log(RNLocationSatellites)
+    /**
+	 * Starts location update 
+	 */
 	RNLocationSatellites.startLocationUpdate();
 	
+	/**
+	 * Event for getting location. 
+	 */
     GPSEventEmitter.addListener('RNSatellite', (event) => {
       alert(JSON.stringify(event))
    	})
 	
+	/**
+	 * Returns the last known location (GPS)
+	 */
 	RNLocationSatellites.getLastKnownLocation().then((location)=>{
       console.log("Last known location: ",location)
     })
 }
 
 componentWillUnmount(){
-	GPSEventEmitter.removeListener('RNSatellite')
-	GPSEventEmitter.removeListener('EVENT_NAME')
+	GPSEventEmitter.removeListener('RNSatellite')	
 }
 
 ```
