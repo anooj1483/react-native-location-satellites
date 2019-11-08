@@ -46,7 +46,7 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
       Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
       WritableMap params = Arguments.createMap();
       params.putString("latitude", "" + location.getLatitude());
-      params.putString("longitude", "" + location.getLatitude());
+      params.putString("longitude", "" + location.getLongitude());
 
       if(location.hasAccuracy()){
         params.putDouble("accuracy", location.getAccuracy());

@@ -27,6 +27,16 @@
   	```
       compile project(':react-native-location-satellites')
   	```
+3. Append the following lines in `MainApplication.java`
+	```
+	import com.synclovis.RNLocationSatellitesPackage;
+	protected List<ReactPackage> getPackages() {
+            return Arrays.<ReactPackage>asList(                 
+                    new RNLocationSatellitesPackage()
+            );
+    }
+	```
+
 
 ## Usage
 
