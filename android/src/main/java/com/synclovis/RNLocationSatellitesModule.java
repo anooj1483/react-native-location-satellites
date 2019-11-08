@@ -39,29 +39,52 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
     return "RNLocationSatellites";
   }
 
+
+  @SuppressLint("MissingPermission")
+  @ReactMethod
+  public void getLastKnownLocation(Promise promise) {
+    try {
+      try {
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        WritableMap params = buildLocationObject(location);
+        promise.resolve(params);
+      }catch (Exception e){
+        promise.reject("Error", e);
+      }
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  private WritableMap buildLocationObject(Location location){
+    WritableMap params = Arguments.createMap();
+    params.putString("latitude", "" + location.getLatitude());
+    params.putString("longitude", "" + location.getLongitude());
+
+    if(location.hasAccuracy()){
+      params.putDouble("accuracy", location.getAccuracy());
+    }
+    if(location.hasAltitude()){
+      params.putDouble("altitude", location.getAltitude());
+    }
+    if(location.hasSpeed()){
+      params.putDouble("speed", location.getSpeed());
+    }
+    if(location.hasBearing()){
+      params.putDouble("bearing", location.getBearing());
+    }
+    params.putString("elapsed_time",""+location.getElapsedRealtimeNanos());
+    params.putInt("satellites", location.getExtras().getInt("satellites",0));
+    return params;
+  }
+
   @SuppressLint("MissingPermission")
   @ReactMethod
   public void getLastKnownLocation(String eventName){
     try{
       Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-      WritableMap params = Arguments.createMap();
-      params.putString("latitude", "" + location.getLatitude());
-      params.putString("longitude", "" + location.getLongitude());
-
-      if(location.hasAccuracy()){
-        params.putDouble("accuracy", location.getAccuracy());
-      }
-      if(location.hasAltitude()){
-        params.putDouble("altitude", location.getAltitude());
-      }
-      if(location.hasSpeed()){
-        params.putDouble("speed", location.getSpeed());
-      }
-      if(location.hasBearing()){
-        params.putDouble("bearing", location.getBearing());
-      }
-      params.putString("elapsed_time",""+location.getElapsedRealtimeNanos());
-      params.putInt("satellites", location.getExtras().getInt("satellites",0));
+      WritableMap params = buildLocationObject(location);
 
       sendEvent(reactContext, eventName, params);
     }catch (Exception e){
@@ -98,25 +121,7 @@ public class RNLocationSatellitesModule extends ReactContextBaseJavaModule imple
   public void onLocationChanged(Location location) {
     try {
       //Toast.makeText(reactContext, "Location updated", Toast.LENGTH_LONG).show();
-      WritableMap params = Arguments.createMap();
-      params.putString("latitude", "" + location.getLatitude());
-      params.putString("longitude", "" + location.getLatitude());
-
-      if(location.hasAccuracy()){
-        params.putDouble("accuracy", location.getAccuracy());
-      }
-      if(location.hasAltitude()){
-        params.putDouble("altitude", location.getAltitude());
-      }
-      if(location.hasSpeed()){
-        params.putDouble("speed", location.getSpeed());
-      }
-      if(location.hasBearing()){
-        params.putDouble("bearing", location.getBearing());
-      }
-      params.putString("elapsed_time",""+location.getElapsedRealtimeNanos());
-      params.putInt("satellites", location.getExtras().getInt("satellites",-1));
-
+      WritableMap params = buildLocationObject(location);
       sendEvent(reactContext, "RNSatellite", params);
     }catch (Exception e){
       Toast.makeText(reactContext,"ONError"+e,Toast.LENGTH_SHORT).show();
