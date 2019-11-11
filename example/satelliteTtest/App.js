@@ -16,7 +16,7 @@ import {
   StatusBar,NativeEventEmitter
 } from 'react-native';
 import {RNLocationSatellites} from 'react-native-location-satellites';
-const GPSEventEmitter = new NativeEventEmitter(RNLocationSatellites);
+//const GPSEventEmitter = new NativeEventEmitter(RNLocationSatellites);
 import {
   Header,
   LearnMoreLinks,
@@ -30,9 +30,9 @@ class App extends React.Component{
   async componentDidMount(){
     console.log(RNLocationSatellites,GPSEventEmitter)
     RNLocationSatellites.startLocationUpdate()
-    GPSEventEmitter.addListener('RNSatellite', (event) => {
-      alert(JSON.stringify(event))
-   })
+  //   GPSEventEmitter.addListener('RNSatellite', (event) => {
+  //     alert(JSON.stringify(event))
+  //  })
 
     RNLocationSatellites.getKnownLocation().then((location)=>{
       console.log("Last Loc",location)
@@ -42,7 +42,7 @@ class App extends React.Component{
 
   componentWillUnmount(){
 
-    GPSEventEmitter.removeListener('RNSatellite')
+  //  GPSEventEmitter.removeListener('RNSatellite')
   }
 
    render(){
