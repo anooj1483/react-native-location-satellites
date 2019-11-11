@@ -9,5 +9,11 @@
 }
 RCT_EXPORT_MODULE()
 
+RCT_REMAP_METHOD(getLastKnownLocation, findEventsWithResolver:(RCTPromiseResolveBlock)resolve
+rejecter:(RCTPromiseRejectBlock)reject)
+{
+  RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
+}
+
 @end
   
