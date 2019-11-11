@@ -8,6 +8,7 @@
 `$ npm install react-native-location-satellites --save`
 
 ### NOTE: Supports only Android. Due to security issues iOS will not disclose satellite counts.
+### Upcoming release: Supports iOS for getting normal location in background.
 
 ### Mostly automatic installation
 
