@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0575377FD183FCD355011C93 /* libPods-satelliteTtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D65187B98C0C457441236F0 /* libPods-satelliteTtest.a */; };
 		0E2668C1237978950014F0A2 /* libreact-native-location-satellites.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2668C0237978950014F0A2 /* libreact-native-location-satellites.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7FE30D26293521AB65F5BEA5 /* libPods-satelliteTtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAEF8859BA457FF313656A7 /* libPods-satelliteTtest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* satelliteTtestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = satelliteTtestTests.m; sourceTree = "<group>"; };
 		0E2668C0237978950014F0A2 /* libreact-native-location-satellites.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-location-satellites.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07F961A680F5B00A75B9A /* satelliteTtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = satelliteTtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* RN Location Satellites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RN Location Satellites.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = satelliteTtest/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = satelliteTtest/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -29,7 +29,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = satelliteTtest/main.m; sourceTree = "<group>"; };
 		2007C2A427AB6B2020186E53 /* Pods-satelliteTtestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satelliteTtestTests.release.xcconfig"; path = "Target Support Files/Pods-satelliteTtestTests/Pods-satelliteTtestTests.release.xcconfig"; sourceTree = "<group>"; };
 		5821DD72AA411B3693D12430 /* Pods-satelliteTtest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satelliteTtest.release.xcconfig"; path = "Target Support Files/Pods-satelliteTtest/Pods-satelliteTtest.release.xcconfig"; sourceTree = "<group>"; };
-		8DAEF8859BA457FF313656A7 /* libPods-satelliteTtest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-satelliteTtest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D65187B98C0C457441236F0 /* libPods-satelliteTtest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-satelliteTtest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3AC5459E7DA01B53FBBEEDA /* Pods-satelliteTtest-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satelliteTtest-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-satelliteTtest-tvOSTests/Pods-satelliteTtest-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADE7CFCF286A95CC165461C2 /* Pods-satelliteTtest-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satelliteTtest-tvOS.release.xcconfig"; path = "Target Support Files/Pods-satelliteTtest-tvOS/Pods-satelliteTtest-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		C8A5B6D31CDD3D3DCA4B454B /* Pods-satelliteTtest-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satelliteTtest-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-satelliteTtest-tvOS/Pods-satelliteTtest-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E2668C1237978950014F0A2 /* libreact-native-location-satellites.a in Frameworks */,
-				7FE30D26293521AB65F5BEA5 /* libPods-satelliteTtest.a in Frameworks */,
+				0575377FD183FCD355011C93 /* libPods-satelliteTtest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 				0E2668C0237978950014F0A2 /* libreact-native-location-satellites.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				8DAEF8859BA457FF313656A7 /* libPods-satelliteTtest.a */,
+				6D65187B98C0C457441236F0 /* libPods-satelliteTtest.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,7 +120,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* satelliteTtest.app */,
+				13B07F961A680F5B00A75B9A /* RN Location Satellites.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 			);
 			name = satelliteTtest;
 			productName = satelliteTtest;
-			productReference = 13B07F961A680F5B00A75B9A /* satelliteTtest.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* RN Location Satellites.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -300,8 +300,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = satelliteTtest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.synclovis.test;
+				PRODUCT_NAME = "RN Location Satellites";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -319,8 +319,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = satelliteTtest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.synclovis.test;
+				PRODUCT_NAME = "RN Location Satellites";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
