@@ -34,22 +34,9 @@ target 'satelliteTtest' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'RNLocationSatellites', :path => '../node_modules/react-native-location-satellites'
-
-  target 'satelliteTtestTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
   use_native_modules!
-end
-
-target 'satelliteTtest-tvOS' do
-  # Pods for satelliteTtest-tvOS
-
-  target 'satelliteTtest-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'react-native-location-satellites', :path => '../node_modules/react-native-location-satellites'
 
 end
+

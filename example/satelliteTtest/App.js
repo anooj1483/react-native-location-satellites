@@ -31,7 +31,8 @@ class App extends React.Component{
     console.log(RNLocationSatellites,GPSEventEmitter)
     RNLocationSatellites.startLocationUpdate()
     GPSEventEmitter.addListener('RNSatellite', (event) => {
-      alert(JSON.stringify(event))
+      alert((event))
+      //alert(JSON.stringify(event))
    })
 
     RNLocationSatellites.getKnownLocation().then((location)=>{
@@ -42,7 +43,7 @@ class App extends React.Component{
 
   componentWillUnmount(){
 
-    GPSEventEmitter.removeListener('RNSatellite')
+  //  GPSEventEmitter.removeListener('RNSatellite')
   }
 
    render(){
