@@ -7,8 +7,8 @@
 
 `$ npm install react-native-location-satellites --save`
 
-### NOTE: Supports only Android. Due to security issues iOS will not disclose satellite counts.
-### Upcoming release: Supports iOS for getting normal location in background.
+### NOTE: Due to security issues iOS will not disclose satellite counts.
+### iOS library will give you location details except satellite count
 
 ### Mostly automatic installation
 
@@ -38,6 +38,22 @@
     }
 	```
 
+### iOS
+
+1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
+2. Go to `node_modules` ➜ `react-native-location-satellites` and add `RNLocationSatellites.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libRNLocationSatellites.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+4. Run your project (`Cmd+R`)<
+
+### Using Cocoapods
+
+1. In Terminal, from your root folder, `cd iOS`
+2. Open PodFile, add the following,
+	```
+	 pod 'react-native-location-satellites', :path => '../node_modules/react-native-location-satellites'
+	 ```
+3. Run `pod install`
+
 
 ## Usage
 
@@ -57,20 +73,28 @@ import {NativeEventEmitter} from 'react-native';
 import {RNLocationSatellites} from 'react-native-location-satellites';
 const GPSEventEmitter = new NativeEventEmitter(RNLocationSatellites)
 componentDidMount(){
-    /**
-	 * Starts location update 
+
+	/**
+	 * iOS Only - Request location permission (iOS 13 Support)
 	 */
-	RNLocationSatellites.startLocationUpdate();
-	
+	RNLocationSatellites.requestAlwaysAuthorization()
+		
 	/**
 	 * Event for getting location. 
 	 */
     GPSEventEmitter.addListener('RNSatellite', (event) => {
-      alert(JSON.stringify(event))
+      console.log(event);      
    	})
 	
 	/**
-	 * Returns the last known location (GPS)
+	 * Starts location update 
+	 */
+   	RNLocationSatellites.startLocationUpdate()
+    
+
+	
+	/**
+	 * Android Only - Returns the last known location (GPS)
 	 */
 	RNLocationSatellites.getLastKnownLocation().then((location)=>{
       console.log("Last known location: ",location)
