@@ -16,6 +16,27 @@
 RCT_EXPORT_MODULE()
 
 
+RCT_REMAP_METHOD(requestAlwaysAuthorization,
+                 requestAlwaysAuthorizationWithResolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    // Get the current status
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+
+    if (status == kCLAuthorizationStatusAuthorizedAlways) {
+        // We already have the correct status so resolve with true
+        resolve(@(YES));
+    } else if (status == kCLAuthorizationStatusNotDetermined || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        // If we have not asked, or we have "when in use" permission, ask for always permission
+        [self.locationManager requestAlwaysAuthorization];
+        // Save the resolver so we can return a result later on
+        self.alwaysPermissionResolver = resolve;
+    } else {
+        // We are not in a state to ask for permission so resolve with false
+        resolve(@(NO));
+    }
+}
+
 RCT_REMAP_METHOD(getKnownLocation,
                  findEventsWithResolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
@@ -54,14 +75,15 @@ RCT_EXPORT_METHOD(startMonitoringSignificantLocationChanges)
 
 RCT_EXPORT_METHOD(startLocationUpdate)
 {
-    [self.locationManager startUpdatingLocation];
+    [self.locationManager startMonitoringSignificantLocationChanges];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    if (!self.hasListeners) {
-        return;
-    }
+//    if (!self.hasListeners) {
+//        printf("[RNSatellite] No listeners");
+//        return;
+//    }
     
     NSMutableArray *results = [NSMutableArray arrayWithCapacity:[locations count]];
     [locations enumerateObjectsUsingBlock:^(CLLocation *location, NSUInteger idx, BOOL *stop) {
